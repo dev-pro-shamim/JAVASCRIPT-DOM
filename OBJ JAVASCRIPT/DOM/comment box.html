@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+</head>
+<body>
+    <h2>Please Add Your Comment</h2>
+    <div id="comment-container">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui sequi nihil officiis enim sapiente dicta cum, voluptatibus minus ratione culpa!</p>
+        <p>Neque cum eveniet ullam repudiandae! Soluta fuga hic cumque tempore et quam quaerat veritatis praesentium illo! Architecto facilis sapiente vero.</p>
+        <p>Nisi debitis assumenda, maxime voluptatem delectus, ipsam soluta saepe sequi nam fugit numquam laudantium. Tempore cupiditate iste vitae velit iure.</p>
+
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="6"></textarea>
+        <br>
+        <button id="btn-post">POST</button>
+    </div>
+
+
+    <script>
+
+        //step 1 addEventListener to the post.
+        document.getElementById('btn-post').addEventListener('click',function(){
+         
+            //step 2 : get the comment inside the textArea
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+    
+
+            //step 3 : set the comment inside the container
+
+            //1. get the comment container
+            //2.create a new elements
+            //3. set the text comment as innertext of a p tag
+            //4. add the p tag using appendChild.
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+            //4.clear the textArea
+
+            commentBox.value= '';
+
+
+        })
+    </script>
+</body>
+</html>

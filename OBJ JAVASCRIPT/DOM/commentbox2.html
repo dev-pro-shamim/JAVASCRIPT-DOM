@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommentBox2</title>
+</head>
+<body>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis?</p>
+        <p>Ea ad repellat laboriosam exercitationem ut culpa voluptas enim molestiae.</p>
+        <p>Rerum, soluta sit. Unde, accusantium eligendi dolorem quo ullam sunt.</p>
+        <p>Dolorum consequatur ipsam nam fuga eos aliquid beatae, quod voluptates.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="80" rows="10"></textarea>
+        <br>
+        <button id="btn-comment">Comment</button>
+    </div>
+
+    <script>
+
+        //step 1 : add to addListener Button 
+        document.getElementById('btn-comment').addEventListener('click',function(){
+
+                 //step 2 : get the comment inside the textArea
+        const commentBox = document.getElementById('new-comment');
+        const newComment = commentBox.value;
+
+        const commentContainer = document.getElementById('comment-container');
+        const p = document.createElement('p')
+       p.innerText = newComment;
+      commentContainer.appendChild(p);
+      commentBox.value = '';
+
+       
+         
+        })
+
+   
+
+
+
+
+    </script>
+
+</body>
+</html>
