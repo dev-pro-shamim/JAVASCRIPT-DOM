@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Bubble</title>
+</head>
+<body>
+    
+    <h1>Exploring Delegate Bubble</h1>
+
+    <ul id="list-container">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Libero, obcaecati eaque.</li>
+        <li class="item">Pariatur, necessitatibus maiores.</li>
+        <li class="item">Quasi, vero vel!</li>
+        <li class="item">Impedit, voluptates molestias!</li>
+        <li class="item">Assumenda, vero officia?</li>
+    </ul>
+    <button id="btn-add-item">Add Item</button>
+
+
+    <script>
+
+        const items = document.getElementsByClassName('item');
+       for(const item of items){
+        //console.log(item);
+
+        item.addEventListener('click',function(event){
+           event.target.parentNode.removeChild(event.target);
+
+        });
+       }
+
+
+
+    //    ====
+
+    document.getElementById('list-container').addEventListener('click',function(event){
+
+        //console.log(event.target);
+        event.target.parendNode.removeChild(event.target)
+
+    })
+       document.getElementById('btn-add-item').addEventListener('click',function(){
+
+        const listContainer = document.getElementById('list-container');
+        const li = document.createElement('li');
+        li.innerText = 'brand new Item';
+       li.classList.add('item')
+        listContainer.appendChild(li)
+
+       })
+
+
+    </script>
+</body>
+</html>
